@@ -31,7 +31,7 @@ export default function Login() {
                 autoComplete="email"
                 required
                 className="relative block w-full px-3 py-2 border border-gray-300 rounded-t-md focus:outline-none focus:ring-red-500 focus:border-red-500"
-                placeholder="Email"
+                placeholder="email"
               />
             </div>
             <div>
@@ -43,7 +43,7 @@ export default function Login() {
                 autoComplete="current-password"
                 required
                 className="relative block w-full px-3 py-2 border border-gray-300 rounded-b-md focus:outline-none focus:ring-red-500 focus:border-red-500"
-                placeholder="Senha"
+                placeholder="senha"
               />
             </div>
           </div>

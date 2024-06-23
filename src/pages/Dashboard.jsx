@@ -27,8 +27,8 @@ export default function Dashboard() {
 
     const fetchData = async () => {
       try {
-        const metricsPromise = fetch(`http://localhost:5042/order?time=2024-${month}`);
-        const ordersPromise = fetch(`http://localhost:5042/order/${quantityOrders}`);
+        const metricsPromise = fetch(`https://xavier-dybvhscxg0gpefd0.eastus-01.azurewebsites.net/order?time=2024-${month}`);
+        const ordersPromise = fetch(`https://xavier-dybvhscxg0gpefd0.eastus-01.azurewebsites.net/order/${quantityOrders}`);
         const result = await Promise.all([metricsPromise, ordersPromise]);
         const metrics = await result[0].json();
         const orders = await result[1].json();
