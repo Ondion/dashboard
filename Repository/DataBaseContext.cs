@@ -15,7 +15,7 @@ public class DataBaseContext : DbContext, IDataBaseContext
     {
         if (!optionsBuilder.IsConfigured)
         {
-            string connectionString = Environment.GetEnvironmentVariable("SQL_SERVER");
+            string connectionString = Environment.GetEnvironmentVariable("SQL_SERVER")!;
             optionsBuilder.UseSqlServer(connectionString);
         }
 
