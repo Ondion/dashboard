@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
-        builder => builder.WithOrigins("http://localhost:5173")
+        builder => builder.WithOrigins("https://gray-sky-087fbdc0f.5.azurestaticapps.net/")
                           .AllowAnyHeader()
                           .AllowAnyMethod());
 });
