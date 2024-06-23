@@ -5,6 +5,6 @@ using FullApp.Models;
 public interface IOrderRepository
 {
     DashboardMetricsDTO GetDashboardMetrics(DateTime date);
-    ICollection<Pedido> GetOrders(int quantidade);
+    ICollection<Pedido> GetOrders(int quantity);
 }
 

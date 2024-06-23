@@ -7,13 +7,15 @@ public class OrderRepository : IOrderRepository
 {
     private readonly IDataBaseContext _context;
 
-    public OrderRepository(IDataBaseContext context)
+    public OrderRepository(IDataBaseContext context) // Injeta o contexto do banco de dados
     {
         this._context = context;
     }
 
     public DashboardMetricsDTO GetDashboardMetrics(DateTime date)
     {
+        //  métricas de pedidos, pedidos abertos, valor total de pedidos abertos, pedidos abertos e fechados no mês, receita mensal, comissões e produtos vendidos no mês
+
         var OpenOrders = this._context.Pedidos.Count(p => p.StatusPedido == "aberto");
 
         var TotalValueOpenOrders = this._context.Pedidos
@@ -40,7 +42,7 @@ public class OrderRepository : IOrderRepository
             .Where(p => p.Pedido!.DataPedido.Year == date.Year && p.Pedido.DataPedido.Month == date.Month)
             .Sum(p => p.Quantidade);
 
-        return new DashboardMetricsDTO
+        return new DashboardMetricsDTO // Objeto de transferência 
         {
             OpenOrders = OpenOrders,
             TotalValueOpenOrders = TotalValueOpenOrders,
